@@ -87,7 +87,7 @@ public class Message extends Table implements Comparable<Message>{
 	}
 	public String generateInsertQuery(){
 		
-		String str="insert into Message values(Message_Sequence.nextval,'"+mBody.trim()+"','"+mSubject.trim()+"',"+fromUserId+","+toUserId+",to_date('"+dateTime+"','dd/mm/yyyy hh24:mi:ss'),"+0+")";
+		String str="insert into Message values(Message_Sequence.nextval,'"+mBody.trim()+"','"+mSubject.trim()+"',"+fromUserId+","+toUserId+",now(),"+0+")";
 		return str;
 	}
 	

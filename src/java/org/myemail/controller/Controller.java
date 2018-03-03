@@ -1,3 +1,5 @@
+package org.sample.myemail.controller;
+
 import java.util.Properties;
 import java.util.Scanner;
 import java.io.FileReader;
