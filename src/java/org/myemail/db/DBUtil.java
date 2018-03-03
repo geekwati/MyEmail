@@ -1,3 +1,6 @@
+package org.myemail.db;
+
+import org.myemail.domain.Table;
 import java.util.*;
 import java.sql.*;
 public class DBUtil {

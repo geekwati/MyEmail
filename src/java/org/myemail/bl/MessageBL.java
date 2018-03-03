@@ -1,3 +1,7 @@
+package org.myemail.bl;
+
+import org.myemail.db.*;
+import org.myemail.domain.*;
 import java.sql.*;
 import java.util.*;
 public class MessageBL {

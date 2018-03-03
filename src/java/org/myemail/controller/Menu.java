@@ -1,3 +1,5 @@
+package org.myemail.controller;
+
 public class Menu{
 	void welcomeMenu(){
 		System.out.println();

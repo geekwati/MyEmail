@@ -1,6 +1,10 @@
+package org.myemail.service;
+
+import org.myemail.bl.*;
+import org.myemail.domain.*;
 import java.util.*;
 import java.sql.*;
-public class Services{
+public class MailService{
 	public void createMessage(Message msg){
 		MessageBL mbl=new MessageBL();
 		mbl.createMessage(msg);
@@ -11,7 +15,7 @@ public class Services{
 	}
 	
 	
-	MailUser authenticateUser(MailUser mu){
+	public MailUser authenticateUser(MailUser mu){
 		UserBL ubl=new UserBL();
 		mu=ubl.authenticateUser(mu);
 		return mu;

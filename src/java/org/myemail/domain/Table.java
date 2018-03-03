@@ -1,3 +1,5 @@
+package org.myemail.domain;
+
 import java.sql.*;
 public abstract class Table{
 	// TO do table name variable

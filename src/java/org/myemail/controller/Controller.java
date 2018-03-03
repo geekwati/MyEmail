@@ -1,5 +1,7 @@
-package org.sample.myemail.controller;
+package org.myemail.controller;
 
+import org.myemail.service.*;
+import org.myemail.domain.*;
 import java.util.Properties;
 import java.util.Scanner;
 import java.io.FileReader;
@@ -11,7 +13,7 @@ import java.text.DateFormat;
 import java.util.Date;  
 import java.util.Collections;
 public class Controller{
-	static Services s=new Services();
+	static MailService s=new MailService();
 	public static void main(String ... args) throws Exception {
 	
 		System.out.println("WELCOME TO EMAIL SERVICES");

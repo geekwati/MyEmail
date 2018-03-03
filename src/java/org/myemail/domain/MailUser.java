@@ -1,8 +1,11 @@
+package org.myemail.domain;
+
 import java.util.*;
+import org.myemail.db.DBUtil;
 import java.sql.*;
 public class MailUser extends Table implements Comparable<MailUser>{
-	int userId;
-	String userName;
+	public int userId;
+	public String userName;
 	String password;
 	int phoneNo;
 	String emailId;

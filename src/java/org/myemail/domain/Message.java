@@ -1,14 +1,17 @@
+package org.myemail.domain;
+
+import org.myemail.db.DBUtil;
 import java.sql.*;
 import java.util.*;
 import java.text.SimpleDateFormat;  
 public class Message extends Table implements Comparable<Message>{
 	//here  compareTo() of Comparable provide default sorting to array and collection of custom class
 	int mId;
-	String mBody;
-	String mSubject;
-	int fromUserId;
-	int toUserId;
-	String dateTime;
+	public String mBody;
+	public String mSubject;
+	public int fromUserId;
+	public int toUserId;
+	public String dateTime;
 	int deleted;
 	public int compareTo(Message msg){
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  

@@ -1,3 +1,5 @@
+package org.myemail.db;
+
 import java.sql.*;
 //import java.util.Properties;
 //import java.io.FileReader;

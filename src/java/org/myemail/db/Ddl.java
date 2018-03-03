@@ -1,3 +1,5 @@
+package org.myemail.db;
+
 import java.util.Properties;
 import java.util.Scanner;
 import java.io.FileReader;
