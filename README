@@ -1,0 +1,16 @@
+<h1>Email-Services</h1>
+It provide email communication between different users.
+
+This project displays three options to choose 
+  1)NewUser (for new user who want to become a part of our email services)
+  2)Login  (existing user want to login into their account)
+  3) exit (to exit from Email Services)
+
+After Login or NewUser User will see following options
+  1)Compose Mail (to write a mail to user)
+  2)Inbox (To see its Incomming mails)
+  3)SentBox (To see its Outgoing mails)
+  4)Trash (To see its Deleted mail from inbox)
+  5)Logout (To Exit from current account)
+
+When Inbox and SentBox are blank then they indicate that user has no message. 
