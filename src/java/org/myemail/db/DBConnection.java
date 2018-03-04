@@ -12,7 +12,10 @@ public class DBConnection{
 			//System.out.println("connection creation process started");
 			
 			Class.forName("org.h2.Driver");
-			con=DriverManager.getConnection("jdbc:h2:file:~/db/myemail;AUTO_SERVER=TRUE", "sa", "");
+			con=DriverManager.getConnection("jdbc:h2:file:~/db/EmailServer/myemail;AUTO_SERVER=TRUE", "sa", "");
+			/*Class.forName("oracle.jdbc.driver.OracleDriver");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","chat","chat");*/
+			
 		}
 			
 			catch(Exception e){
