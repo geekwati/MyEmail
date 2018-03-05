@@ -14,5 +14,5 @@ cd../..
 
 rem run controller
 cd target
-java -cp ../lib/h2-1.3.176.jar;. org/myemail/db/TestDdl
+java -cp ../lib/h2-1.3.176.jar;../resources/;. org/myemail/db/TestDdl
 cd..

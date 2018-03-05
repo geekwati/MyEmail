@@ -13,8 +13,8 @@ javac  -d %targetPath% org/myemail/db/*.java
 javac  -d %targetPath% org/myemail/domain/*.java
 javac  -d %targetPath% org/myemail/service/*.java
 cd../..
-
-rem run controller
+ 
+ rem run controller
 cd target
-java -cp ../lib/h2-1.3.176.jar;. org/myemail/controller/Controller
+java -cp ../lib/h2-1.3.176.jar;../resources/;. org/myemail/controller/Controller
 cd..

@@ -1,19 +1,53 @@
 package org.myemail.db;
 
 import java.sql.*;
-//import java.util.Properties;
+import java.util.Properties;
 //import java.io.FileReader;
 //import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.IOException;
+//import java.lang.IllegalArgumentException;
 public class DBConnection{
 
 	public static Connection createConnection() {
 		Connection con=null;
+		Properties config=new Properties();
+		try{//CurrentClass.class.getClassLoader().getResourceAsStream
+			InputStream stream=DBConnection.class.getClassLoader().getResourceAsStream("dbcon.properties");
+			//new FileReader(getClass().getResourceAsStream("dbcon.properties"));
+			//this.getClass().getResourceAsStream("dbcon.properties");
+			//new FileReader("dbcon.properties");
+			//f:/project/corejava7_8/test/EmailServer1/resources/
+			config.load(stream);
+		}
+		//getResourceAsStream throughs NullPointerException
+		//NullPointerException is a RunTimeException -no nedd to catch it but still I'm Catching it
+		catch(NullPointerException e){
+			System.out.println("Error occured during reading properties file");
+			e.printStackTrace();
+		}
+		//config.load() throughs IOException-compileTimeException
+		catch(IOException e){
+			System.out.println("Error occured during reading properties file");
+			e.printStackTrace();
+		}
+		//IOException - if an error occurred when reading from the input stream.
+		//IllegalArgumentException - if the input stream contains a malformed Unicode escape sequence.
+		//IllegalArgumentException is a RunTimeException- no need to catch but still I'm catch it
+		// catch(IllegalArgumentException e){
+		// 	System.out.println("properties file contains a malformed unicode escape sequence ");
+		// 	e.printStackTrace();
+		// }
+		
 		try{
 			//System.out.println("connection creation process started");
-			
-			Class.forName("org.h2.Driver");
-			con=DriverManager.getConnection("jdbc:h2:file:~/db/EmailServer/myemail;AUTO_SERVER=TRUE", "sa", "");
+			Class.forName(config.getProperty("Driver"));
+			con=DriverManager.getConnection(
+				config.getProperty("ConUrl"),config.getProperty("UserName"),config.getProperty("Password"));
 			//System.out.println("connection created");
+			// Class.forName("org.h2.Driver");
+			// con=DriverManager.getConnection("jdbc:h2:file:~/db/EmailServer/myemail;AUTO_SERVER=TRUE", "sa", "");
+			// //System.out.println("connection created");
 			/*Class.forName("oracle.jdbc.driver.OracleDriver");
 			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","chat","chat");*/
 			
